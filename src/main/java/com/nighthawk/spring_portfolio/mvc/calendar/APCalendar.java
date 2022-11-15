@@ -10,9 +10,13 @@ public class APCalendar {
      */          
     public static boolean isLeapYear(int year) {
         // implementation not shown
-
-        return false;
+        if ((year%4==0 && year%100!=0) || year%400==0) {
+            return true;
         }
+        else {
+            return false;
+        }
+    }
         
     /** Returns the value representing the day of the week 
      * 0 denotes Sunday, 
