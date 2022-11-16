@@ -9,8 +9,11 @@ import java.io.InputStream;
  */
 class Year {
    private int year;
+   private int month;
+   private int day;
    private boolean isLeapYear;
    private int firstDayOfYear;
+   private int dayOfYear;
 
    // zero argument constructor
    public Year() {} 
@@ -50,6 +53,21 @@ class Year {
    public String firstDayOfYearToString(){
       return ( "{ \"year\": "  +this.year+  ", " + "\"firstDayOfYear\": "  +this.firstDayOfYear+ " }" );
    }	
+
+
+   //Day of year
+   public int getdayOfYear(int month, int day, int year) {
+      return APCalendar.dayOfYear(month, day, year);
+   }
+   private void setdayOfYear(int year) {  // this is private to avoid tampering
+      this.dayOfYear = APCalendar.dayOfYear(year);
+   }
+
+   /* isLeapYearToString formatted to be mapped to JSON */
+   public String dayOfYearToString(){
+      return ( "{ \"year\": "  +this.year+  ", " \"year\": "  +this.year+  ", " + "\"dayOfYear\": "  +this.dayOfYear+ " }" );
+   }	
+
 
    /* standard toString placeholder until class is extended */
    public String toString() { 
