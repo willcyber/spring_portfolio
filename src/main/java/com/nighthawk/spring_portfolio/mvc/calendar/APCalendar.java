@@ -49,7 +49,54 @@ public class APCalendar {
     private static int dayOfYear(int month, int day, int year) {
         // implementation not shown
 
-        return 1;
+        int n=0;
+        int feb;
+
+        if (isLeapYear(year)) {
+            feb=29;
+        }
+        else {
+            feb=28;
+        }
+        
+
+        if (month==2) {
+            n+=31;
+        }
+        else if (month==3) {
+            n=31+feb;
+        }
+        else if (month==4) {
+            n=62+feb;
+        }
+        else if (month==5) {
+            n=92+feb;
+        }
+        else if (month==6) {
+            n=123+feb;
+        }
+        else if (month==7) {
+            n=153+feb;
+        }
+        else if (month==8) {
+            n=184+feb;
+        }
+        else if (month==9) {
+            n=215+feb;
+        }
+        else if (month==10) {
+            n=245+feb;
+        }
+        else if (month==11) {
+            n=276+feb;
+        }
+        else if (month==12) {
+            n=306+feb;
+        }
+       
+        n+=day;
+
+        return n;
         }
 
     /** Returns the number of leap years between year1 and year2, inclusive.
@@ -75,7 +122,8 @@ public class APCalendar {
         System.out.println("firstDayOfYear 2022: " + APCalendar.firstDayOfYear(2022));
         System.out.println("firstDayOfYear 2021: " + APCalendar.firstDayOfYear(2021));
         System.out.println("firstDayOfYear 2020: " + APCalendar.firstDayOfYear(2020));
-        System.out.println("dayOfYear: " + APCalendar.dayOfYear(1, 1, 2022));
+        System.out.println("dayOfYear (leap): " + APCalendar.dayOfYear(3, 1, 2020));
+        System.out.println("dayOfYear (no leap): " + APCalendar.dayOfYear(3, 1, 2021));
 
         // Public access modifiers
         System.out.println("isLeapYear: " + APCalendar.isLeapYear(2022));
