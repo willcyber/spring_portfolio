@@ -27,7 +27,16 @@ public class APCalendar {
     private static int firstDayOfYear(int year) {
         // implementation not shown
 
-        return 0;
+        if (isLeapYear(year)) {
+            year --;
+        }
+        else {
+            year +=0;
+        }
+
+        year = year % 7;
+
+        return year;
         }
 
 
@@ -63,7 +72,9 @@ public class APCalendar {
     /** Tester method */
     public static void main(String[] args) {
         // Private access modifiers
-        System.out.println("firstDayOfYear: " + APCalendar.firstDayOfYear(2022));
+        System.out.println("firstDayOfYear 2022: " + APCalendar.firstDayOfYear(2022));
+        System.out.println("firstDayOfYear 2021: " + APCalendar.firstDayOfYear(2021));
+        System.out.println("firstDayOfYear 2020: " + APCalendar.firstDayOfYear(2020));
         System.out.println("dayOfYear: " + APCalendar.dayOfYear(1, 1, 2022));
 
         // Public access modifiers
