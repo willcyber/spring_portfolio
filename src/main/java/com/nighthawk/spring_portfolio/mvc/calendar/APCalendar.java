@@ -122,7 +122,17 @@ public class APCalendar {
     */
     public static int dayOfWeek(int month, int day, int year) { 
         // to be implemented in part (b)
-        return 0;
+
+        int dow = 0;
+
+        int fdoy = firstDayOfYear(year);
+        int doy = dayOfYear(month, day, year);
+
+        dow = (fdoy+doy-1)%7;
+        
+
+
+        return dow;
         }
 
     /** Tester method */
@@ -137,7 +147,7 @@ public class APCalendar {
         // Public access modifiers
         System.out.println("isLeapYear: " + APCalendar.isLeapYear(2022));
         System.out.println("numberOfLeapYears: " + APCalendar.numberOfLeapYears(2000, 2022));
-        System.out.println("dayOfWeek: " + APCalendar.dayOfWeek(1, 1, 2022));
+        System.out.println("dayOfWeek: " + APCalendar.dayOfWeek(2, 2, 2022));
     }
 
 }
