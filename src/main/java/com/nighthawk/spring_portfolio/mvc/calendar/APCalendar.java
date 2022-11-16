@@ -93,6 +93,9 @@ public class APCalendar {
         else if (month==12) {
             n=306+feb;
         }
+        else {
+            System.out.println("please input a correct month");
+        }
        
         n+=day;
 
