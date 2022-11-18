@@ -56,19 +56,6 @@ class Year {
    }	
 
 
-    /* isLeapYear getter/setters */
-    public int getFirstDayOfYear(int year) {
-      return APCalendar.firstDayOfYear(year);
-   }
-   private void setFirstDayOfYear(int year) {  // this is private to avoid tampering
-      this.firstDayOfYear = APCalendar.firstDayOfYear(year);
-   }
-
-  /* isLeapYearToString formatted to be mapped to JSON */
-  public String toJSON(){
-     return ( "{ \"year\": "  +this.year+  ", " + "\"isLeapYear\": "  +this.isLeapYear + ", \"firstDayOfYear\": \"" + days[this.firstDayOfYear] +  "\" }" );
-  }	
-
   /* standard toString placeholder until class is extended */
 //   public String toString() { 
 //      return toJSON(); 
