@@ -54,8 +54,8 @@ public class CalendarApiController {
     }
 
 
-    @GetMapping("/dayInfo/{day}/{month}/{year}")
-    public ResponseEntity<JsonNode> getDayInfo(@PathVariable int day, @PathVariable int month, @PathVariable int year) throws IOException, InterruptedException, ParseException {
+    @GetMapping("/dayStuff/{day}/{month}/{year}")
+    public ResponseEntity<JsonNode> getDayStuff(@PathVariable int day, @PathVariable int month, @PathVariable int year) throws IOException, InterruptedException, ParseException {
       // Backend Day Object
       Day day_obj = new Day(day, month, year);
 
