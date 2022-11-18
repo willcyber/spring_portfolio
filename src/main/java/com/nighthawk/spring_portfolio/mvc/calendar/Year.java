@@ -14,6 +14,7 @@ class Year {
    private boolean isLeapYear;
    private int firstDayOfYear;
    private int dayOfYear;
+   private String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
    // zero argument constructor
    public Year() {} 
@@ -55,18 +56,27 @@ class Year {
    }	
 
 
-   //Day of year
-   public int getdayOfYear(int month, int day, int year) {
-      return APCalendar.dayOfYear(month, day, year);
+    /* isLeapYear getter/setters */
+    public int getFirstDayOfYear(int year) {
+      return APCalendar.firstDayOfYear(year);
    }
-   private void setdayOfYear(int year) {  // this is private to avoid tampering
-      this.dayOfYear = APCalendar.dayOfYear(year);
+   private void setFirstDayOfYear(int year) {  // this is private to avoid tampering
+      this.firstDayOfYear = APCalendar.firstDayOfYear(year);
    }
 
-   /* isLeapYearToString formatted to be mapped to JSON */
-   public String dayOfYearToString(){
-      return ( "{ \"year\": "  +this.year+  ", " \"year\": "  +this.year+  ", " + "\"dayOfYear\": "  +this.dayOfYear+ " }" );
-   }	
+  /* isLeapYearToString formatted to be mapped to JSON */
+  public String toJSON(){
+     return ( "{ \"year\": "  +this.year+  ", " + "\"isLeapYear\": "  +this.isLeapYear + ", \"firstDayOfYear\": \"" + days[this.firstDayOfYear] +  "\" }" );
+  }	
+
+  /* standard toString placeholder until class is extended */
+//   public String toString() { 
+//      return toJSON(); 
+//   }
+
+
+
+   	
 
 
    /* standard toString placeholder until class is extended */
@@ -84,3 +94,4 @@ class Year {
 //     return null;
 // }
 }
+

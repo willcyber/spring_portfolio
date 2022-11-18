@@ -2,6 +2,7 @@ package com.nighthawk.spring_portfolio.mvc.calendar;
 
 import java.io.IOException;
 
+import org.json.simple.parser.ParseException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,21 +54,26 @@ public class CalendarApiController {
     }
 
 
-    @GetMapping("/dayOfYear/{month,day,year}")
-    public ResponseEntity<JsonNode> getdayOfYear(@PathVariable int month, int day, int year) throws JsonMappingException, JsonProcessingException {
-      // Backend Year Object
-      Year year_obj = new Year();
-      year_obj.setYear(year);  // evaluates Leap Year
+    @GetMapping("/dayInfo/{day}/{month}/{year}")
+    public ResponseEntity<JsonNode> getDayInfo(@PathVariable int day, @PathVariable int month, @PathVariable int year) throws IOException, InterruptedException, ParseException {
+      // Backend Day Object
+      Day day_obj = new Day(day, month, year);
 
       // Turn Year Object into JSON
       ObjectMapper mapper = new ObjectMapper(); 
-      JsonNode json = mapper.readTree(year_obj.dayOfYearToString()); // this requires exception handling
+      JsonNode json = mapper.readTree(day_obj.toJSON()); // this requires exception handling
 
       return ResponseEntity.ok(json);  // JSON response, see ExceptionHandlerAdvice for throws
     }
 
+    @GetMapping("/leapYears/{year1}/{year2}")
+    public ResponseEntity<JsonNode> getLeapYears(@PathVariable int year1, @PathVariable int year2) throws JsonMappingException, JsonProcessingException {
+      ObjectMapper mapper = new ObjectMapper(); 
+      JsonNode json = mapper.readTree("{ \"count\": " + APCalendar.numberOfLeapYears(year1, year2) + " } "); // this requires exception handling
 
+      return ResponseEntity.ok(json);  // JSON response, see ExceptionHandlerAdvice for throws
+    }
+}
 
 
     // add other methods
-}
