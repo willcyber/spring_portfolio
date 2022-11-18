@@ -10,7 +10,6 @@ public class Day {
     private int day;
     private int dayOfYear;
     private int dayOfWeek;
-    private String birthday;
     private String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
   
    // zero argument constructor
@@ -69,7 +68,7 @@ public class Day {
   
     /* isLeapYearToString formatted to be mapped to JSON */
     public String toJSON(){
-        return String.format("{ \"year\": %d, \"month\": %d, \"day\": %d, \"dayOfWeek\": \"%s\", \"dayOfYear\": %d, \"famousBirthday\": \"%s\"}", this.year, this.month, this.day, this.days[dayOfWeek], this.dayOfYear, this.birthday);
+        return String.format("{ \"year\": %d, \"month\": %d, \"day\": %d, \"dayOfWeek\": \"%s\", \"dayOfYear\": \"%s\"}", this.year, this.month, this.day, this.days[dayOfWeek], this.dayOfYear);
     }	
   
     /* standard toString placeholder until class is extended */
