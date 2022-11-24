@@ -95,11 +95,9 @@ public class Person {
     }
 
 
-    public String toString() {
-        
-    }
     public static void main(String[] args) {
-
+        Person test = new Person(null, null, null, null);
+        System.out.println(test.getAge());
     }
 
 }
