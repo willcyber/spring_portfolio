@@ -96,8 +96,11 @@ public class Person {
 
 
     public static void main(String[] args) {
-        Person test = new Person(null, null, null, null);
-        System.out.println(test.getAge());
+        Person test = new Person();
+        System.out.println(test);
+
+        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", );
+        System.out.println(test2.getAge());
     }
 
 }
