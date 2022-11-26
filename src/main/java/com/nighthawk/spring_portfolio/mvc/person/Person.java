@@ -66,10 +66,10 @@ public class Person {
     
     // inches
     @NotEmpty
-    private String height;
+    public String height;
 
     @NotEmpty
-    private String weight;
+    public String weight;
 
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
