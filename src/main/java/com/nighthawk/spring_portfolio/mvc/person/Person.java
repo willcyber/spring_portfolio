@@ -68,6 +68,9 @@ public class Person {
     @NotEmpty
     private String height;
 
+    @NotEmpty
+    private String weight;
+
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
         "2022-11-13": {
@@ -82,12 +85,13 @@ public class Person {
     
 
     // Constructor used when building object from an API
-    public Person(String email, String password, String name, Date dob, String height) {
+    public Person(String email, String password, String name, Date dob, String height, String weight) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.dob = dob;
         this.height = height;
+        this.weight = weight;
     }
 
     // A custom getter to return age from dob attribute
@@ -104,7 +108,7 @@ public class Person {
         Person test = new Person();
         System.out.println(test);
 
-        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", dob2, "71");
+        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", dob2, "71", "180");
         System.out.println(test2);
     }
 
