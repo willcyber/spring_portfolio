@@ -64,6 +64,9 @@ public class Person {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;
     
+    // inches
+    @NotEmpty
+    private String height;
 
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
@@ -79,11 +82,12 @@ public class Person {
     
 
     // Constructor used when building object from an API
-    public Person(String email, String password, String name, Date dob) {
+    public Person(String email, String password, String name, Date dob, String height) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.dob = dob;
+        this.height = height;
     }
 
     // A custom getter to return age from dob attribute
@@ -96,11 +100,12 @@ public class Person {
 
 
     public static void main(String[] args) {
+        Date dob2 = new Date(2006-01-28);
         Person test = new Person();
         System.out.println(test);
 
-        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", );
-        System.out.println(test2.getAge());
+        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", dob2, "71");
+        System.out.println(test2);
     }
 
 }
