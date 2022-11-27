@@ -65,11 +65,9 @@ public class Person {
     private Date dob;
     
     // inches
-    @NotEmpty
-    public String height;
+    public Integer height;
 
-    @NotEmpty
-    public String weight;
+    public Integer weight;
 
     /* HashMap is used to store JSON for daily "stats"
     "stats": {
@@ -85,7 +83,7 @@ public class Person {
     
 
     // Constructor used when building object from an API
-    public Person(String email, String password, String name, Date dob, String height, String weight) {
+    public Person(String email, String password, String name, Integer height, Integer weight, Date dob) {
         this.email = email;
         this.password = password;
         this.name = name;
@@ -103,13 +101,14 @@ public class Person {
     }
 
 
-    public static void main(String[] args) {
-        Date dob2 = new Date(2006-01-28);
-        Person test = new Person();
-        System.out.println(test);
 
-        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", dob2, "71", "180");
-        System.out.println(test2);
-    }
+    // public static void main(String[] args) {
+    //     Date dob2 = new Date(2006-01-28);
+    //     Person test = new Person();
+    //     System.out.println(test);
+
+    //     Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", 71, 180, dob2);
+    //     System.out.println(test2);
+    // }
 
 }
