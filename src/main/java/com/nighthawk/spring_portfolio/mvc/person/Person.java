@@ -106,7 +106,9 @@ public class Person {
         return numberofsteps;
     }
 
-
+    public String toString() {
+        return ( "{ \"email\": "  +this.email+  ", " + "\"password\": "  +this.password+ "\"name\": "  +this.name+ "\"height\": "  +this.height+ "\"weight\": "  +this.weight+ " }" );
+    }
 
     public static void main(String[] args) {
         Date dob2 = new Date(2006-01-28);
@@ -116,6 +118,7 @@ public class Person {
         Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", 71, 180, dob2);
         System.out.println(test2);
         System.out.println(test2.numberofsteps());
+        System.out.println(test2.toString());
     }
 
 }
