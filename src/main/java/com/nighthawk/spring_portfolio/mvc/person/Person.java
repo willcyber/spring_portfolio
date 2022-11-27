@@ -100,15 +100,22 @@ public class Person {
         return -1;
     }
 
+    // note this is def not accurate lol
+    public int numberofsteps() {
+        int numberofsteps = weight/height *100;
+        return numberofsteps;
+    }
 
 
-    // public static void main(String[] args) {
-    //     Date dob2 = new Date(2006-01-28);
-    //     Person test = new Person();
-    //     System.out.println(test);
 
-    //     Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", 71, 180, dob2);
-    //     System.out.println(test2);
-    // }
+    public static void main(String[] args) {
+        Date dob2 = new Date(2006-01-28);
+        Person test = new Person();
+        System.out.println(test);
+
+        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", 71, 180, dob2);
+        System.out.println(test2);
+        System.out.println(test2.numberofsteps());
+    }
 
 }
