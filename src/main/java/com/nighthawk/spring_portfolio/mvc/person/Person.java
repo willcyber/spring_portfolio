@@ -27,6 +27,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
 /*
 Person is a POJO, Plain Old Java Object.
 First set of annotations add functionality to POJO
@@ -107,15 +110,18 @@ public class Person {
     }
 
     public String toString() {
-        return ( "{ \"email\": "  +this.email+  ", " + "\"password\": "  +this.password+ "\"name\": "  +this.name+ "\"height\": "  +this.height+ "\"weight\": "  +this.weight+ " }" );
+        return ( "{ \"email\": "  +this.email+  ", " + "\"password\": "  +this.password+ "\"name\": "  +this.name+ "\"height\": "  +this.height+ "\"weight\": "  +this.weight+ "\"dob\": "  +this.dob+ " }" );
     }
 
-    public static void main(String[] args) {
-        Date dob2 = new Date(2006-01-28);
+    public static void main(String[] args) throws ParseException {
+        Date dob = new SimpleDateFormat("MM-dd-yyyy").parse("01-28-2006");
+
+        //no arg
         Person test = new Person();
         System.out.println(test);
 
-        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", 71, 180, dob2);
+        //arg
+        Person test2 = new Person("wutwilliam@gmail.com", "CyberPatriot1!", "William Wu", 71, 180, dob);
         System.out.println(test2);
         System.out.println(test2.numberofsteps());
         System.out.println(test2.toString());
