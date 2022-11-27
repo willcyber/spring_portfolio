@@ -128,15 +128,15 @@ public class PersonApiController {
         
     }
 
-    // @PostMapping("/numberofsteps/{id}")
-    // public ResponseEntity<int> numberofsteps(@PathVariable long id, int weight, int height) {
-    //     Optional<Person> optional = repository.findById(id);
-    //     if (optional.isPresent()) {  // Good ID
-    //         Person person = optional.get();  // value from findByID
-    //         int numberofsteps = weight/height *100;
-    //         return new ResponseEntity<>(numberofsteps, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
-    //     }
-    //     // Bad ID
-    //     return new ResponseEntity<>(HttpStatus.BAD_REQUEST); 
-    // }
+    @PostMapping("/numberofsteps/{id}")
+    public int numberofsteps(@PathVariable long id) {
+        Optional<Person> optional = repository.findById(id);
+        if (optional.isPresent()) {  // Good ID
+            Person person = optional.get();  // value from findByID
+            int numberofsteps = person.numberofsteps();
+            return numberofsteps;  // OK HTTP response: status code, headers, and body
+        }
+        // Bad ID
+        return -1; 
+    }
 }
