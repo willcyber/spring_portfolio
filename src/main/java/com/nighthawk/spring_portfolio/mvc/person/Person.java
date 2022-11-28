@@ -105,7 +105,7 @@ public class Person {
 
     // note this is def not accurate lol
     public int numberofsteps() {
-        int numberofsteps = weight/height *100;
+        int numberofsteps = (int) (weight/Math.pow(height, 2) *703 *10);
         return numberofsteps;
     }
 
