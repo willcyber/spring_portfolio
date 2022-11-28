@@ -103,7 +103,7 @@ public class Person {
         return -1;
     }
 
-    // note this is def not accurate lol
+    // note this is just an example. just doing bmi *10
     public int numberofsteps() {
         int numberofsteps = (int) (weight/Math.pow(height, 2) *703 *10);
         return numberofsteps;
