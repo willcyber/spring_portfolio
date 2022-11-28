@@ -115,14 +115,12 @@ public class PersonApiController {
             }
 
             // Set Date and Attributes to SQL HashMap
-            Map<String, Map<String, Object>> date_map = new HashMap<>();
+            // Map<String, Map<String, Object>> date_map = new HashMap<>();
+            Map<String, Map<String, Object>> date_map = person.getStats(); //fix
             date_map.put( (String) stat_map.get("date"), attributeMap );
 
-            //fixing setStats problem
-
-
-            person.setStats(date_map);  // BUG, needs to be customized to replace if existing or append if new
-            repository.save(person);  // conclude by writing the stats updates
+            person.setStats(date_map);  
+            repository.save(person);  
 
             // return Person with update Stats
             return new ResponseEntity<>(person, HttpStatus.OK);
