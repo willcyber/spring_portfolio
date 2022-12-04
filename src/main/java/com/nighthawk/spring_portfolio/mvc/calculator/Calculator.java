@@ -107,6 +107,8 @@ public class Calculator {
         }
     }
 
+
+
     // Takes tokens and converts to Reverse Polish Notation (RPN), this is one where the operator follows its operands.
     private void tokensToReversePolishNotation () {
         // contains final list of tokens in RPN
@@ -114,19 +116,35 @@ public class Calculator {
 
         // stack is used to reorder for appropriate grouping and precedence
         Stack<String> tokenStack = new Stack<String>();
+
+
         for (String token : tokens) {
             switch (token) {
                 // If left bracket push token on to stack
                 case "(":
-                    tokenStack.push(token);
-                    break;
-                case ")":
-                    while (tokenStack.peek() != null && !tokenStack.peek().equals("("))
-                    {
-                        reverse_polish.add( tokenStack.pop() );
+                    if (tokens.contains(")") ) {
+                       tokenStack.push(token);
+                        break; 
                     }
-                    tokenStack.pop();
-                    break;
+                    else {
+                        break;
+                    }
+                    
+                    
+                case ")":
+                    if (tokens.contains("(") ) {
+                        while (tokenStack.peek() != null && !tokenStack.peek().equals("("))
+                        {
+                            reverse_polish.add( tokenStack.pop() );
+                        }
+                        tokenStack.pop();
+                        break;
+                    }
+                    else {
+                        break;
+                    }
+
+                    
                 case "+":
                 case "-":
                 case "*":
@@ -240,6 +258,11 @@ public class Calculator {
 
         Calculator divisionMath = new Calculator("300/200");
         System.out.println("Division Math\n" + divisionMath);
+
+        System.out.println();
+
+        Calculator parenthesisclose = new Calculator("3 + 2)");
+        System.out.println(parenthesisclose);
 
     }
 }
