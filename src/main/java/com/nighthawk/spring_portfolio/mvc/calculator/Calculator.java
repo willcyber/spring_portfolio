@@ -264,5 +264,10 @@ public class Calculator {
         Calculator parenthesisclose = new Calculator("3 + 2)");
         System.out.println(parenthesisclose);
 
+        System.out.println();
+
+        Calculator parenthesisclose2 = new Calculator("((3 + 2)+3");
+        System.out.println(parenthesisclose2);
+
     }
 }
