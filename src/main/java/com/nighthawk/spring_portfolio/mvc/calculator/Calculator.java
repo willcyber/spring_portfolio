@@ -167,6 +167,9 @@ public class Calculator {
                 return stack.pop() * stack.pop();
             case "/":
                 return stack.pop() / stack.pop();
+            case "%":
+                double doublestack = stack.pop();
+                return stack.pop() % doublestack;
             default:
                 return 0.00;
         }
