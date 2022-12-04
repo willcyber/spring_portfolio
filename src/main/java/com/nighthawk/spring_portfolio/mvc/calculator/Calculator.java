@@ -244,6 +244,11 @@ public class Calculator {
                 "Final result: " + String.format("%.2f", this.result));
     }
 
+    public String turntojson() {
+        String json = "{ \"Expression\": \"" + this.expression + "\", \"Tokens\": \"" + this.tokens + "\", \"RPN\": \"" + this.reverse_polish + "\", \"Result\": " + this.result + " }";
+        return json;
+    }
+
     // Tester method
     public static void main(String[] args) {
         // Random set of test cases
