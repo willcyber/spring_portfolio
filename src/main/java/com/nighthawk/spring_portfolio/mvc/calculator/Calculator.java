@@ -24,6 +24,7 @@ public class Calculator {
     private final Map<String, Integer> OPERATORS = new HashMap<>();
     {
         // Map<"token", precedence>
+        OPERATORS.put("^", 2);
         OPERATORS.put("*", 3);
         OPERATORS.put("/", 3);
         OPERATORS.put("%", 3);
@@ -127,6 +128,7 @@ public class Calculator {
                         break; 
                     }
                     else {
+                        //pretty much just ignore parenthesis
                         break;
                     }
                     
@@ -143,12 +145,15 @@ public class Calculator {
                     else {
                         break;
                     }
-
+                
+                
+                    
                     
                 case "+":
                 case "-":
                 case "*":
                 case "/":
+                case "^":
                 case "%":
                     // While stack
                     // not empty AND stack top element
@@ -164,6 +169,7 @@ public class Calculator {
                     // Push the new operator on the stack
                     tokenStack.push(token);
                     break;
+                
                 default:    // Default should be a number, there could be test here
                     this.reverse_polish.add(token);
             }
@@ -188,10 +194,15 @@ public class Calculator {
             case "%":
                 double doublestack = stack.pop();
                 return stack.pop() % doublestack;
+            case "^":
+                double a = stack.pop();
+                double b = stack.pop();
+                return Math.pow(b, a);
             default:
                 return 0.00;
         }
     }
+
 
 
     // Takes RPN and produces a final result
@@ -261,13 +272,15 @@ public class Calculator {
 
         System.out.println();
 
-        Calculator parenthesisclose = new Calculator("3 + 2)");
+        Calculator parenthesisclose = new Calculator("(3 + 2");
         System.out.println(parenthesisclose);
 
         System.out.println();
 
-        Calculator parenthesisclose2 = new Calculator("((3 + 2)+3");
-        System.out.println(parenthesisclose2);
+        // Calculator parenthesisclose2 = new Calculator("(3 + 2+3");
+        // System.out.println(parenthesisclose2);
 
+        Calculator exponent = new Calculator("2 ^ 3 + 5");
+        System.out.println(exponent);
     }
 }
