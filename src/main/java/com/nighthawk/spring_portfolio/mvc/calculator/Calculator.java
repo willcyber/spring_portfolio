@@ -162,7 +162,7 @@ public class Calculator {
             case "+":
                 return stack.pop() + stack.pop();
             case "-":
-                return stack.pop() - stack.pop();
+                return -stack.pop() + stack.pop();
             case "*":
                 return stack.pop() * stack.pop();
             case "/":
