@@ -169,7 +169,12 @@ public class Calculator {
                     // Push the new operator on the stack
                     tokenStack.push(token);
                     break;
-                
+                case "PI":
+                    this.reverse_polish.add("3.14");
+                    break;
+                case "e":
+                    this.reverse_polish.add("2.72");
+                    break;
                 default:    // Default should be a number, there could be test here
                     this.reverse_polish.add(token);
             }
@@ -270,6 +275,11 @@ public class Calculator {
 
         Calculator divisionMath = new Calculator("300/200");
         System.out.println("Division Math\n" + divisionMath);
+
+        System.out.println();
+
+        Calculator vartest = new Calculator("PI+e");
+        System.out.println("Variable Test\n" + vartest);
 
         System.out.println();
 
