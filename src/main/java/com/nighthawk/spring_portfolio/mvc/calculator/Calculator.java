@@ -244,10 +244,6 @@ public class Calculator {
                 "Final result: " + String.format("%.2f", this.result));
     }
 
-    public String turntojson() {
-        String json = "{ \"Expression\": \"" + this.expression + "\", \"Tokens\": \"" + this.tokens + "\", \"RPN\": \"" + this.reverse_polish + "\", \"Result\": " + this.result + " }";
-        return json;
-    }
 
     // Tester method
     public static void main(String[] args) {
@@ -279,15 +275,15 @@ public class Calculator {
 
         Calculator exponent = new Calculator("2 ^ 3 + 5");
         System.out.println(exponent);
-        
-        System.out.println();
-
-        Calculator parenthesisclose = new Calculator("3 + 2)");
-        System.out.println(parenthesisclose);
 
         System.out.println();
 
-        Calculator parenthesisclose2 = new Calculator("(3 + 2+3");
+        // Calculator parenthesisclose = new Calculator("3 + 2)");
+        // System.out.println(parenthesisclose);
+
+        System.out.println();
+
+        Calculator parenthesisclose2 = new Calculator("((3 + 2)+3");
         System.out.println(parenthesisclose2);
 
         
