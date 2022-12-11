@@ -3,11 +3,11 @@ package com.nighthawk.spring_portfolio.mvc.lightboard;
 import lombok.Data;
 
 @Data  // Annotations to simplify writing code (ie constructors, setters)
-public class LightBoard_size {
+public class LightBoard_sizecolor {
     private Light[][] lights;
 
     /* Initialize LightBoard and Lights */
-    public LightBoard_size(int numRows, int numCols) {
+    public LightBoard_sizecolor(int numRows, int numCols) {
         this.lights = new Light[numRows][numCols];
         // 2D array nested loops, used for initialization
         for (int row = 0; row < numRows; row++) {
@@ -119,7 +119,7 @@ public class LightBoard_size {
     
     static public void main(String[] args) {
         // create and display LightBoard
-        LightBoard_size lightBoard = new LightBoard_size(5, 5);
+        LightBoard_sizecolor lightBoard = new LightBoard_sizecolor(5, 5);
         System.out.println(lightBoard);  // use toString() method
         System.out.println(lightBoard.toTerminal());
         System.out.println(lightBoard.toColorPalette());
