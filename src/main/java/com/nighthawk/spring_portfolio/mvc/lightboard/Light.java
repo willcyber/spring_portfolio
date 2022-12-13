@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data  // Annotations to simplify writing code (ie constructors, setters)
 public class Light {
-    boolean on;
+    boolean on=true;
     short red;
     short green;
     short blue;
@@ -53,6 +53,10 @@ public class Light {
 
     public String getEffectTitle() {
         return EFFECT.get(this.effect);
+    }
+
+    public boolean getOn() {
+        return this.on;
     }
 
     public String getRGB() {
