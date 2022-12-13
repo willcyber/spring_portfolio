@@ -16,7 +16,7 @@ public class LightBoardApiController {
     private LightBoard lightBoard;
     private JsonNode json;
 
-    @GetMapping("/create/{rows}/{cols}")
+    @GetMapping("/rowcol/{rows}/{cols}")
     public ResponseEntity<JsonNode> generateLightBoard(@PathVariable int rows, @PathVariable int cols)
             throws JsonMappingException, JsonProcessingException {
         lightBoard = new LightBoard(rows, cols);
