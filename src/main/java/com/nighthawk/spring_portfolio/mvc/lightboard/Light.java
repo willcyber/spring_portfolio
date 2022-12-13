@@ -69,13 +69,13 @@ public class Light {
 
     /* toString output as key/values */
     public String toString() {
-        return( "{" + 
-            "\"red\": " + red + "," +
-            "\"green\": " +  green + "," + 
-            "\"blue\": " + blue + "," +
-            "\"effect\": " + "\"" + EFFECT.get(effect) + "\"" +
-            "}" );
+        return( "{" + "\"on\": " + this.on + "," + "\"red\": " + red + "," + "\"green\": " +  green + "," + "\"blue\": " + blue + "," + "\"effect\": " + "\"" + EFFECT.get(effect) + "\"" + "}" );
+        // return toJSON(); 
     }
+
+    // public String toJSON(){
+    //     return String.format("{ \"year\": %d, \"month\": %d, \"day\": %d, \"dayOfWeek\": \"%s\", \"dayOfYear\": \"%s\"}", this.on, red, green, blue, EFFECT.get(effect));
+    // }	
 
     static public void main(String[] args) {
         // create and display LightBoard
