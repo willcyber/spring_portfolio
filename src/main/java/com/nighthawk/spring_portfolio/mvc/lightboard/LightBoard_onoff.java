@@ -86,7 +86,6 @@ public class LightBoard_onoff {
                     for (int j = 0; j < COLS; j++) {
                         // print single character, except at midpoint print color code
 
-                        lights[2][2].getOn();
 
                         if (lights[row][col].getOn()) {
 

@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data  // Annotations to simplify writing code (ie constructors, setters)
 public class Light {
-    boolean on = true;
+    boolean on = false;
     short red;
     short green;
     short blue;
